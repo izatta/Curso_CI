@@ -5,9 +5,9 @@ name: Go
 
 on:
   push:
-    branches: [ "Aula_1" ]
+    branches: [ "Aula_2" ]
   pull_request:
-    branches: [ "Aula_1" ]
+    branches: [ "Aula_2" ]
 
 jobs:
 
@@ -24,3 +24,10 @@ jobs:
     - name: Build
       run: go build -v main.go
 
+    - name: Build-DB
+      run: docker-compose build
+    
+    - name: Create-DB
+      run: docker-compose up -d
+    
+    
